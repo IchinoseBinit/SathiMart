@@ -1,37 +1,35 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="Add_customer.aspx.cs" Inherits="Sathi_mart.Add_customer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="AddItem.aspx.cs" Inherits="Sathi_mart.AddItem" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   
-
 </asp:Content>
-    <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div style="margin-top: 100px;" class="py-12 shadow-sm ...">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <div style="margin-top: 100px;" class="py-12 shadow-sm ...">
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <h2 style="font-size: 30px;font-weight: bold;">Add customer</h2>
+            <h2 style="font-size: 30px;font-weight: bold;">Add products</h2>
             <div style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <form method="POST" action="">
                         <div class="mb-4">
-                            <label class="text-xl text-gray-600">Customer name <span class="text-red-500">*</span></label><br></br>
+                            <label class="text-xl text-gray-600">Item name <span class="text-red-500">*</span></label><br></br>
                             <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="TextBox1" runat="server"></asp:TextBox>
                         </div>
 
                         <div class="mb-4">
-                            <label class="text-xl text-gray-600">Customer Address</label><br></br>
+                            <label class="text-xl text-gray-600">Item Qty</label><br></br>
                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="TextBox2" runat="server"></asp:TextBox>
                         </div>
                         <div class="mb-4">
-                            <label class="text-xl text-gray-600">Membership ID</label><br></br>
+                            <label class="text-xl text-gray-600">Item price</label><br></br>
                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="TextBox3" runat="server"></asp:TextBox>
                         </div>
 
                         <div class="mb-4">
-                            <label class="text-xl text-gray-600">Email address</label><br></br>
+                            <label class="text-xl text-gray-600">Seller</label><br></br>
                             <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="TextBox4" runat="server"></asp:TextBox>
                         </div>
 
                         <div class="mb-4">
-                            <label class="text-xl text-gray-600">Email</label><br></br>
+                            <label class="text-xl text-gray-600">something</label><br></br>
                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="TextBox5" runat="server"></asp:TextBox>
                         </div>
 
