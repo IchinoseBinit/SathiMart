@@ -42,8 +42,8 @@
                             <br />
                             <asp:Label ID="lblId" runat="server" Visible="False"></asp:Label>
                             <div style="float: right;" class="flex p-1">
-                            <asp:Button class="p-3 bg-blue-500 text-white hover:bg-blue-400" ID="btnAdd" runat="server" Text="Button" OnClick="btnAdd_Click" />
-                           
+                            <asp:Button class="btn btn-success" style="margin-top:20px;margin-botoom:20px;" ID="btnAdd" runat="server" Text="Add customer" OnClick="btnAdd_Click" />
+                                <asp:Button ID="btnDelete" runat="server" class="btn btn-danger" style="margin-right:20px;margin-top:20px;margin-botoom:20px;" Text="Delete" OnClick="btnDelete_Click" Visible="false"/><asp:Button ID="btnUpdate" runat="server" style="margin-right:20px;margin-top:20px;margin-botoom:20px;" class="btn btn-success" Text="Update" OnClick="btnUpdate_Click" Visible="false"/>
                         </div> 
                    
                     </div>
@@ -51,7 +51,7 @@
                 </div>
             </div>
         <div style="margin-top:40px;" class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                           <asp:GridView class="table" ID="customerGridView" runat="server"  AutoGenerateColumns="False" style="margin-bottom: 88px" OnRowCommand="customerGridView_RowCommand">
+                           <asp:GridView class="table table-striped" ID="customerGridView" runat="server"  AutoGenerateColumns="False" style="margin-bottom: 88px" OnRowCommand="customerGridView_RowCommand">
                 <Columns>
                    <asp:TemplateField HeaderText="MID">
                       <ItemTemplate>
@@ -89,7 +89,7 @@
                
                                     <asp:TemplateField>
                                      <ItemTemplate>
-                        <asp:LinkButton ID="View" runat="server" class="btn btn-success" CommandName="view" CommandArgument='<%#Bind("mid")%>' CausesValidation="False" CssClass="btn btn-primary">Select</asp:LinkButton>
+                        <asp:LinkButton ID="View" runat="server" class="btn btn-success" style="background:orange;border:none;" CommandName="view" CommandArgument='<%#Bind("mid")%>' CausesValidation="False">Select</asp:LinkButton>
                                      </ItemTemplate>
                                     </asp:TemplateField>
                 </Columns>
@@ -158,4 +158,5 @@
         }
     </script>
 
+</div>
 </asp:Content>

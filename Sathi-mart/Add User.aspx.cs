@@ -11,6 +11,8 @@ namespace Sathi_mart
 {
     public partial class Add_User : System.Web.UI.Page
     {
+        List<string> usernameList = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             FillGridView();
@@ -25,8 +27,14 @@ namespace Sathi_mart
 
         protected void FillGridView()
         {
+            txtPassword.Attributes["type"] = "password";
             userGridView.DataSource = new UserLogin().SelectUser();
             userGridView.DataBind();
+            DataTable dt = new UserLogin().SelectUser();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                usernameList.Add(dt.Rows[i]["username"].ToString());
+            }
         }
 
 
@@ -34,18 +42,30 @@ namespace Sathi_mart
         {
             lblError.Visible = true;
 
-            var username = txtUsername.Text;
-            var password = txtPassword.Text;
-            var email = txtEmail.Text;
-            var isAdmin = checkIsAdmin.Checked;
-
-            UserLogin userLogin = new UserLogin();
-            lblError.Text = userLogin.AddUser(username, password, email, isAdmin.ToString());
-            if (lblError.Text.Length == 0)
+            foreach (var user in usernameList) 
             {
-                ClearFields();
-                Response.Redirect("Login.aspx");
+                if(user == txtUsername.Text.Trim())
+                {
+                    lblError.Text = "Username already exists";
+                    return;
+                }
             }
+                lblError.Visible = true;
+
+                var username = txtUsername.Text;
+                var password = txtPassword.Text;
+                var email = txtEmail.Text;
+                var isAdmin = checkIsAdmin.Checked;
+
+                UserLogin userLogin = new UserLogin();
+                lblError.Text = userLogin.AddUser(username, password, email, isAdmin.ToString());
+                if (lblError.Text.Length == 0)
+                {
+                    ClearFields();
+                    Response.Redirect("Login.aspx");
+                }
+
+            
         }
 
         protected void userGridView_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -63,6 +83,7 @@ namespace Sathi_mart
             //.Text = dt.Rows[0]["mid"].ToString();
             txtUsername.Text = dt.Rows[0]["username"].ToString();
             txtEmail.Text = dt.Rows[0]["email"].ToString();
+            txtPassword.Text = dt.Rows[0]["password"].ToString();
             checkIsAdmin.Checked = bool.Parse(dt.Rows[0]["isAdmin"].ToString());
             lblId.Text = dt.Rows[0]["id"].ToString();
             btnAddUser.Visible = false;
@@ -71,6 +92,15 @@ namespace Sathi_mart
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+            lblError.Visible = true;
+            foreach (var user in usernameList)
+            {
+                if (user == txtUsername.Text.Trim())
+                {
+                    lblError.Text = "Username already exists";
+                    return;
+                }
+            }
             var username = txtUsername.Text;
             var password = txtPassword.Text;
             var email = txtEmail.Text;

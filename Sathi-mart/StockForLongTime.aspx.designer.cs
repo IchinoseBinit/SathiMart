@@ -15,15 +15,6 @@ namespace Sathi_mart
     {
 
         /// <summary>
-        /// btnDeleteAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteAll;
-
-        /// <summary>
         /// lblSuccess control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,15 @@ namespace Sathi_mart
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
+
+        /// <summary>
+        /// btnDeleteAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteAll;
 
         /// <summary>
         /// noStockGridView control.

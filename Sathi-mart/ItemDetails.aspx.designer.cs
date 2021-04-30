@@ -11,124 +11,124 @@ namespace Sathi_mart
 {
 
 
-    public partial class AddItem
+    public partial class ItemDetails
     {
 
         /// <summary>
-        /// txtItemName control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtItemName;
+        protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
-        /// txtDescription control.
+        /// radioSearchType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        protected global::System.Web.UI.WebControls.RadioButtonList radioSearchType;
 
         /// <summary>
-        /// txtItemQty control.
+        /// lblInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtItemQty;
+        protected global::System.Web.UI.WebControls.Label lblInput;
 
         /// <summary>
-        /// txtItemPrice control.
+        /// txtInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtItemPrice;
+        protected global::System.Web.UI.WebControls.TextBox txtInput;
 
         /// <summary>
-        /// txtPurchaseDate control.
+        /// btnAvailable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPurchaseDate;
+        protected global::System.Web.UI.WebControls.Button btnAvailable;
 
         /// <summary>
-        /// cmboCategory control.
+        /// btnViewDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmboCategory;
+        protected global::System.Web.UI.WebControls.Button btnViewDetails;
 
         /// <summary>
-        /// cmboSupplier control.
+        /// lblHead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmboSupplier;
+        protected global::System.Web.UI.WebControls.Label lblHead;
 
         /// <summary>
-        /// lblMessage control.
+        /// lblItemId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Label lblItemId;
 
         /// <summary>
-        /// lblId control.
+        /// lblItemName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblId;
+        protected global::System.Web.UI.WebControls.Label lblItemName;
 
         /// <summary>
-        /// btnAdd control.
+        /// lblItemDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Label lblItemDescription;
 
         /// <summary>
-        /// btnDelete control.
+        /// lblItemQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::System.Web.UI.WebControls.Label lblItemQuantity;
 
         /// <summary>
-        /// btnUpdate control.
+        /// lblItemPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        protected global::System.Web.UI.WebControls.Label lblItemPrice;
 
         /// <summary>
-        /// itemGridView control.
+        /// itemDetailsDataGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView itemGridView;
+        protected global::System.Web.UI.WebControls.GridView itemDetailsDataGridView;
     }
 }

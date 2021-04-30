@@ -94,15 +94,16 @@ namespace Sathi_mart
             return name;
         }
 
-        /*public DataTable GetItemById(string id)
+        public DataTable GetItemDetail(string type, string input)
         {
-            int itemId = int.Parse(id);
-            string strData = "Select * From item Where itemId='" + itemId + "'";
-            SqlDataAdapter da = new SqlDataAdapter(strData, gc.cn);
+            string sql = "select * from item"+
+                      " where " + type + " ='" + input + "'";
+            SqlDataAdapter da = new SqlDataAdapter(sql, gc.cn);
             DataSet ds = new DataSet();
             da.Fill(ds, "item");
             return ds.Tables[0];
-        }*/
+
+        }
 
         public DataTable GetSaleDetail(string type, string input)
         {
@@ -126,7 +127,7 @@ namespace Sathi_mart
         
 
 
-        public String addItem(String name, String description, int quantity, float price, String purchaseDate, int categoryId, int supplierId)
+        public String addItem(String name, String description, int quantity, float price, string purchaseDate, int categoryId, int supplierId)
         {
             try{
                 SqlCommand cmd = new SqlCommand("Insert into item(name, description, price, quantity, purchaseDate, category, supplier) values (@name, @description, @price ,@quantity, @purchaseDate, @category, @supplier)", gc.cn);
@@ -149,6 +150,32 @@ namespace Sathi_mart
                 return ex.Message;
 
             }
+        }
+
+        public void UpdateItem(string id, string name, string description, int quantity, float price, string purchaseDate, int categoryId, int supplierId)
+        {
+            SqlCommand cmd = new SqlCommand("Update item set name=@name, description=@description, price=@price, quantity=@quantity ,purchaseDate=@purchaseDate, category=@category, supplier=@supplier where itemId=@id", gc.cn);
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@quantity", quantity);
+            cmd.Parameters.AddWithValue("@price", price);
+            cmd.Parameters.AddWithValue("@purchaseDate", purchaseDate);
+
+            cmd.Parameters.AddWithValue("@category", categoryId);
+            cmd.Parameters.AddWithValue("@supplier", supplierId);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            //con.Close();
+            gc.cn.Close();      
+        }
+
+        public void DeleteItem(string id)
+        {
+                SqlCommand cmd = new SqlCommand("Delete from item where itemId=@id", gc.cn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                //con.Close();
+                gc.cn.Close(); 
         }
 
     }

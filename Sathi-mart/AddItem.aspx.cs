@@ -82,6 +82,8 @@ namespace Sathi_mart
             cmboCategory.SelectedValue = dt.Rows[0]["category"].ToString();
             cmboSupplier.SelectedValue = dt.Rows[0]["supplier"].ToString();
             lblId.Text = dt.Rows[0]["itemId"].ToString();
+            btnAdd.Visible = false;
+            btnUpdate.Visible = true;
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -105,11 +107,35 @@ namespace Sathi_mart
             {
                 lblMessage.Text += ex.Message;
             }
-            lblMessage.Visible = true;
-            
+            lblMessage.Visible = true;     
+        }
 
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            var mid = lblId.Text;
+            new Item().DeleteItem(mid);
+            ClearFields();
 
+            FillGridView();
+            btnAdd.Visible = true;
+            btnUpdate.Visible = false;
+        }
 
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            var name = txtItemName.Text;
+            var description = txtDescription.Text;
+            var price = float.Parse(txtItemPrice.Text);
+            int qty= int.Parse(txtItemQty.Text);
+            var purchaseDate = txtPurchaseDate.Text;
+            var categoryId = int.Parse(cmboCategory.SelectedValue);
+            var supplierId = int.Parse(cmboSupplier.SelectedValue);
+            var itemId = lblId.Text;
+
+            new Item().UpdateItem(itemId, name, description, qty, price, purchaseDate, categoryId, supplierId);
+            FillGridView();
+            btnAdd.Visible = true;
+            btnUpdate.Visible = false;
         }
     }
 }

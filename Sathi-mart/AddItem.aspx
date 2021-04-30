@@ -1,21 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="AddItem.aspx.cs" Inherits="Sathi_mart.AddItem" %>
+
 <%@ Import Namespace="Sathi_mart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="margin-top: 100px;" class="py-12 shadow-sm ...">
+    <div style="margin-top: 120px;" class="py-12 shadow-sm ...">
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <h2 style="font-size: 30px; font-weight: bold;">Add products</h2>
             <div style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <form method="POST" action="">
-                        =
-                       
+
+
                         <div class="mb-4">
                             <label class="text-xl text-gray-600">Item name <span class="text-red-500">*</span></label><br></br>
-                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="txtItemName" runat="server"></asp:TextBox>
+                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" Required ID="txtItemName" runat="server"></asp:TextBox>
                         </div>
                         <div class="mb-4">
                             <label class="text-xl text-gray-600">Description</label><br></br>
@@ -38,12 +39,12 @@
 
                         <div class="mb-4">
                             <label class="text-xl text-gray-600">Category</label><br></br>
-                            <asp:DropDownList ID="cmboCategory" runat="server">
+                            <asp:DropDownList CssClass="form-control" ID="cmboCategory" runat="server">
                             </asp:DropDownList>
                         </div>
                         <div class="mb-4">
-                            <label class="text-xl text-gray-600">Supplier</label><br>
-                                <asp:DropDownList ID="cmboSupplier" runat="server">
+                            <label class="text-xl text-gray-600">Supplier</label><br> <br />
+                                <asp:DropDownList CssClass="form-control" ID="cmboSupplier" runat="server">
                                 </asp:DropDownList>
                             </br>
 
@@ -57,8 +58,9 @@
 
 
                         <div style="float: right;" class="flex p-1">
-                            <asp:Button class="p-3 bg-blue-500 text-white hover:bg-blue-400" ID="btnAdd" runat="server" Text="Add item" OnClick="btnAdd_Click" />
-
+                            <asp:Button class="btn btn-success" ID="btnAdd" runat="server" Text="Add item" OnClick="btnAdd_Click" />
+                            <asp:Button ID="btnDelete" runat="server" class="btn btn-danger" style="margin-right:20px;margin-top:20px;margin-bottom:20px;" Text="Delete" OnClick="btnDelete_Click" Visible="false"/><asp:Button ID="btnUpdate" runat="server" style="margin-right:20px;margin-top:20px;margin-bottom:20px;" class="btn btn-success" Text="Update" OnClick="btnUpdate_Click" Visible="false"/>
+                        
 
 
                         </div>
@@ -69,7 +71,8 @@
     </div>
 
     <div style="margin-top: 40px;" class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <asp:GridView class="table" ID="itemGridView" runat="server" AutoGenerateColumns="False" Style="margin-bottom: 88px" OnRowCommand="itemGridView_RowCommand">
+        <h2 style="margin-bottom:20px;">All Products</h2>
+        <asp:GridView class="table table-striped" ID="itemGridView" runat="server" AutoGenerateColumns="False" Style="margin-bottom: 88px" OnRowCommand="itemGridView_RowCommand">
             <Columns>
                 <asp:TemplateField HeaderText="Item Id">
                     <ItemTemplate>
@@ -106,13 +109,13 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Category">
                     <ItemTemplate>
-                        <asp:Label ID="Label2" runat="server" Text='<%#new Item().GetCategoryById(Eval("category").ToString())%>'></asp:Label>
+                        <asp:Label ID="lblCategory" runat="server" Text='<%#new Item().GetCategoryById(Eval("category").ToString())%>'></asp:Label>
                     </ItemTemplate>
 
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Supplier">
                     <ItemTemplate>
-                        <asp:Label ID="Label2" runat="server" Text='<%#new Item().GetSupplierById(Eval("supplier").ToString())%>'></asp:Label>
+                        <asp:Label ID="lblSupplier" runat="server" Text='<%#new Item().GetSupplierById(Eval("supplier").ToString())%>'></asp:Label>
 
                         <%--<asp:Label ID="lblSupplier" runat="server" Text='<%#Eval("supplier") %>'></asp:Label>--%>
                     </ItemTemplate>
@@ -121,7 +124,7 @@
 
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:LinkButton ID="View" runat="server" class="btn btn-success" CommandName="view" CommandArgument='<%#Bind("itemId")%>' CausesValidation="False" CssClass="btn btn-primary">Select</asp:LinkButton>
+                        <asp:LinkButton ID="View" runat="server" class="btn btn-secondary" style="background:orange;border:none;" CommandName="view" CommandArgument='<%#Bind("itemId")%>' CausesValidation="False" >Select</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

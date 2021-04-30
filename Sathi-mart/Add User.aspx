@@ -6,9 +6,8 @@
 
 
 
-    <div class="container"  style="margin-top: 200px;">
+    <div class="container"  style="margin-top: 150px;">
         <h1 class="h1">Add User</h1>
-        <br />
         <div class="row">
             <div class="col-sm-12">
                 <center>
@@ -16,22 +15,24 @@
                 </center>
             </div>
         </div>
+        <br />
+
 
         <div class="row">  
             <div class="col-md-6"">
                 <form action="/" method="post">
                     <div class="form-group">
-                        <asp:TextBox class="form-control"  ID="txtUsername" placeholder="Enter username" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control"  ID="txtUsername" required placeholder="Enter username" runat="server"></asp:TextBox>
                     </div>
                     <br />
 
                     <div class="form-group">
-                        <asp:TextBox textMode="Password" class="form-control"  ID="txtPassword" placeholder="Enter password" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control" required ID="txtPassword" placeholder="Enter password" runat="server"></asp:TextBox>
                     </div>
                     <br />
 
                     <div class="form-group">
-                        <asp:TextBox class="form-control"  ID="txtEmail" placeholder="Enter Email Address" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control"  ID="txtEmail" required placeholder="Enter Email Address" runat="server"></asp:TextBox>
                     </div>
 
                     <br />
@@ -81,7 +82,7 @@
                
                                     <asp:TemplateField>
                                      <ItemTemplate>
-                        <asp:LinkButton ID="View" runat="server" class="btn btn-success" CommandName="view" CommandArgument='<%#Bind("id")%>' CausesValidation="False" CssClass="btn btn-primary">Select</asp:LinkButton>
+                        <asp:LinkButton ID="View" runat="server" class="btn btn-success" style="background:orange;border:none;" CommandName="view" CommandArgument='<%#Bind("id")%>' CausesValidation="False">Select</asp:LinkButton>
                                      </ItemTemplate>
                                     </asp:TemplateField>
                 </Columns>

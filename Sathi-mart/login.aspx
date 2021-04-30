@@ -3,22 +3,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="margin-top: 200px;" class="container">
+    <div style="margin-top: 150px;" class="container">
         <div class="row">
             <h2 class="h2">User Login</h2>
                 <div class="col-md-6">
                 <center>
+              
+                <asp:Label class="alert alert-danger" style="width:100%;margin:30px;" ID="lblError" runat="server" Visible="False"></asp:Label>
+                      <br />
                 <br />
-                <br />
-                <asp:Label class="alert alert-danger" ID="lblError" runat="server" Visible="False"></asp:Label>
 
                 </center>
                 
-                <asp:TextBox class="form-control" ID="txtUsername" runat="server" placeholder="Enter username"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="txtUsername" runat="server" required placeholder="Enter username"></asp:TextBox>
                 <br />
                 <br />
                 
-                <asp:TextBox textMode="Password" class="form-control" ID="txtPassword" runat="server" placeholder="Enter password"></asp:TextBox>
+                <asp:TextBox textMode="Password" class="form-control" ID="txtPassword" required runat="server" placeholder="Enter password"></asp:TextBox>
                 <br />
                 <br />
                 <br />

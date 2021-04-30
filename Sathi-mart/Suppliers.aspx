@@ -14,31 +14,30 @@
 
                         <div class="mb-4">
                             <label class="text-xl text-gray-600">Supplier Name</label><br></br>
-                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="txtSupplierName" runat="server"></asp:TextBox>
+                            <asp:TextBox required type="text" class="border-2 border-gray-300 p-2 w-full" ID="txtSupplierName" runat="server"></asp:TextBox>
                         </div>
 
 
                         <div class="mb-4">
                             <label class="text-xl text-gray-600">Address</label><br></br>
-                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="txtAddress" runat="server"></asp:TextBox>
+                            <asp:TextBox required type="text" class="border-2 border-gray-300 p-2 w-full"  ID="txtAddress" runat="server"></asp:TextBox>
                         </div>
 
                         <div class="mb-4">
                             <label class="text-xl text-gray-600">Phone Number</label><br></br>
-                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="txtPhoneNumber" runat="server"></asp:TextBox>
+                            <asp:TextBox required type="text" class="border-2 border-gray-300 p-2 w-full" ID="txtPhoneNumber" runat="server"></asp:TextBox>
                         </div>
 
                         
                         <div class="mb-4">
                             <label class="text-xl text-gray-600">Email <span class="text-red-500">*</span></label><br></br>
-                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="txtSupplierEmail" runat="server"></asp:TextBox>
+                            <asp:TextBox type="text" required class="border-2 border-gray-300 p-2 w-full"  ID="txtSupplierEmail" runat="server"></asp:TextBox>
                             <br />
                             <asp:Label ID="lblId" runat="server" Visible="False"></asp:Label>
                         </div>
 
-
-                        <asp:LinkButton ID="btnAdd" runat="server" class="btn btn-success" CommandArgument='<%#Bind("supplierId")%>' CausesValidation="False" CssClass="btn btn-primary" OnClick="btnAdd_Click">Add Supplier</asp:LinkButton>
-                    <asp:Button ID="btnUpdate" runat="server" class="btn btn-secondary" OnClick="btnUpdate_Click" Text="Update" />
+                        <asp:Button ID="btnAdd" runat="server"  class="btn btn-success" Text="Add Supplier" OnClick="btnAdd_Click"/>
+                        <asp:Button ID="btnUpdate" runat="server" class="btn btn-secondary" OnClick="btnUpdate_Click" Text="Update" />
                 </div>
             </div>
         </div>
@@ -71,7 +70,7 @@
 
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:LinkButton ID="View" runat="server" class="btn btn-success" CommandName="view" CommandArgument='<%#Bind("supplierId")%>' CausesValidation="False" CssClass="btn btn-primary">Select</asp:LinkButton>
+                        <asp:LinkButton ID="View" runat="server" class="btn btn-success" style="background-color:orange;border:none;" CommandName="view" CommandArgument='<%#Bind("supplierId")%>' CausesValidation="False"  >Select</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

@@ -20,12 +20,12 @@
             <div class="col-md-6"">
                 <form action="/" method="post">
                     <div class="form-group">
-                        <asp:TextBox class="form-control"  ID="txtUsername" placeholder="Enter username" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control"  ID="txtUsername" placeholder="Enter username" required runat="server"></asp:TextBox>
                     </div>
                     <br />
 
                     <div class="form-group">
-                        <asp:TextBox textMode="Password" class="form-control"  ID="txtPassword" placeholder="Enter password" runat="server"></asp:TextBox>
+                        <asp:TextBox textMode="Password" class="form-control"  ID="txtPassword" required placeholder="Enter password" runat="server"></asp:TextBox>
                     </div>
                     <br />
 

@@ -2,7 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1 style="margin-top:300px;">Inactive customer</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                 <h2 style="margin-top:140px;margin-bottom:30px;">Inactive customers</h2>
        <asp:GridView class="table table-striped" ID="inactiveCustomerGridView" runat="server" AutoGenerateColumns="False" Style="margin-bottom: 88px">
                     <Columns>
                         <asp:TemplateField HeaderText="Item Id">
@@ -42,4 +45,8 @@
                         
                     </Columns>
                 </asp:GridView>
+            </div>
+        </div>
+
+    </div>
 </asp:Content>

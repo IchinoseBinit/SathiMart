@@ -2,7 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1 style="margin-top:300px;">Items not sold in month</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                   <h2 style="font-size: 30px; font-weight: bold;margin-top:150px;margin-bottom:30px;">Items not sold in month</h2>
 
        <asp:GridView class="table table-striped" ID="itemNotSoldInMonth" runat="server" AutoGenerateColumns="False" Style="margin-bottom: 88px">
                     <Columns>
@@ -59,4 +62,9 @@
                         
                     </Columns>
                 </asp:GridView>
+            </div>
+        </div>
+    </div>
+    
+    
 </asp:Content>

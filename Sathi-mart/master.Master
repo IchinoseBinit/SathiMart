@@ -264,10 +264,10 @@
                     <div class="w-1/2 pr-0">
                         <div class="flex relative" style ="position:absolute;top:78px;left:1300px;" >
                             <a style="color: white; text-decoration: none;" href="ChangePassword.aspx">
-                                <asp:Label ID="lblUsername" runat="server" Text=""></asp:Label>
+                                Hello, <asp:Label ID="lblUsername" runat="server" Text=""></asp:Label>
                             </a>
                             &nbsp;
-                            <asp:Button CssClass="fa fa-facebook" ID="btnLogout" runat="server" Text="" OnClick="btnLogout_Click" BackColor="#111827" ForeColor="White" />
+                          <i style ="margin-left:20px;margin-top:4px;color:white;" class="fa fa-sign-out">  <asp:Button ID="btnLogout" runat="server"  Text="Logout" OnClick="btnLogout_Click" BackColor="#111827" ForeColor="White" /></i>
                         </div>
                     </div>
             </div>

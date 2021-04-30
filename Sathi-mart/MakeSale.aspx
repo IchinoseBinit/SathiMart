@@ -11,18 +11,17 @@
                     <form method="POST" action="">
                         <div class="mb-4">
                             <label class="text-xl text-gray-600">Item Id<span class="text-red-500">*</span></label><br></br>
-                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="txtItemId" runat="server"></asp:TextBox>
+                            <asp:TextBox required type="text" class="form-control"  ID="txtItemId" runat="server"></asp:TextBox>
                         </div>
                         <div class="mb-4">
                             <label class="text-xl text-gray-600">Quantity<span class="text-red-500">*</span></label><br></br>
-                            <asp:TextBox type="text" class="border-2 border-gray-300 p-2 w-full" required ID="txtQuantity" runat="server"></asp:TextBox>
+                            <asp:TextBox required type="text" class="form-control"  ID="txtQuantity" runat="server"></asp:TextBox>
                             <br />
                             <asp:Label ID="lblId" runat="server" Visible="False"></asp:Label>
                         </div>
 
 
-
-                        <asp:LinkButton ID="btnSale" runat="server" class="btn btn-success" CommandArgument='<%#Bind("itemId")%>' CssClass="btn btn-primary" OnClick="btnSale_Click">Sale</asp:LinkButton>
+                        <asp:Button ID="btnSale" runat="server" class="btn btn-success" Text="Sale" OnClick="btnSale_Click"/>
                         &nbsp;&nbsp;&nbsp;
                 </div>
             </div>

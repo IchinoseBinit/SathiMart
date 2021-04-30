@@ -3,19 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="margin-top: 190px;" class="container">
+    <div style="margin-top: 160px;" class="container">
         <div class="row">
             <div class="col-md-12">
-                <asp:Button ID="btnDeleteAll" Style="float: right;" CssClass="btn btn-success" runat="server" Text="Delete all items" OnClick="btnDeleteAll_Click" />
+                
+                <asp:Label class="alert alert-success" ID="lblSuccess" runat="server" Visible="False"></asp:Label>
+             
+                <asp:Label class="alert alert-success" ID="lblError" runat="server" Visible="False"></asp:Label>
+                <asp:Button ID="btnDeleteAll" Style="float: right;margin-top:20px;" CssClass="btn btn-secondary" runat="server" Text="Delete all items" OnClick="btnDeleteAll_Click" />
                 <h2>Stock for long time</h2>
 
-                <br />
-                <br />
+             
 
-                <asp:Label class="alert alert-success" ID="lblSuccess" runat="server" Visible="False"></asp:Label>
-                <br />
-                <br />
-                <asp:Label class="alert alert-success" ID="lblError" runat="server" Visible="False"></asp:Label>
                 <br />
                 <br />
 

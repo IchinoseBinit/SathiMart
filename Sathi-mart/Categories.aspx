@@ -19,15 +19,16 @@
 
 
 
-                        <asp:LinkButton ID="btnAdd" runat="server" class="btn btn-success" CommandName="view" CommandArgument='<%#Bind("mid")%>' CausesValidation="False" CssClass="btn btn-primary" OnClick="btnAdd_Click">Add Category</asp:LinkButton>
+                        <asp:LinkButton ID="btnAdd" runat="server" class="btn btn-success" CommandName="view" CommandArgument='<%#Bind("mid")%>' CausesValidation="False" OnClick="btnAdd_Click">Add Category</asp:LinkButton>
                         &nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="Update" />
+                    <asp:Button ID="btnUpdate" CssClass="btn btn-secondary" runat="server" OnClick="btnUpdate_Click" Text="Update" />
                 </div>
             </div>
         </div>
     </div>
     <div style="margin-top: 40px;" class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <asp:GridView class="table" ID="categoryGridView" runat="server" AutoGenerateColumns="False" Style="margin-bottom: 88px" OnRowCommand="categoryGridView_RowCommand">
+          <h3 style="font-size: 30px; font-weight: bold;margin-bottom:20px;">All categories</h3>
+        <asp:GridView class="table table-striped" ID="categoryGridView" runat="server" AutoGenerateColumns="False" Style="margin-bottom: 88px" OnRowCommand="categoryGridView_RowCommand">
             <Columns>
 
                 <asp:TemplateField HeaderText="Category Id">
@@ -42,7 +43,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:LinkButton ID="View" runat="server" class="btn btn-success" CommandName="view" CommandArgument='<%#Bind("categoryId")%>' CausesValidation="False" CssClass="btn btn-primary">Select</asp:LinkButton>
+                        <asp:LinkButton ID="View" runat="server" class="btn btn-success" style="background:orange;border:none;" CommandName="view" CommandArgument='<%#Bind("categoryId")%>' CausesValidation="False">Select</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

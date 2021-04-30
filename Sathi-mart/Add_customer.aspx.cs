@@ -56,19 +56,12 @@ namespace Sathi_mart
             txtEmail.Text = dt.Rows[0]["email"].ToString();
             cmboMember.Text = dt.Rows[0]["memberType"].ToString();
             lblId.Text = dt.Rows[0]["mid"].ToString();
+            btnAdd.Visible = false;
+            btnDelete.Visible = true;
+            btnUpdate.Visible = true;
         }
 
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            /*var mid = lblId.Text;
-            Customers customers = new Customers();
-            customers.deleteCustomer(mid);
-            clearFields();
-
-            FillGridView();*/
-
-        }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
@@ -97,7 +90,23 @@ namespace Sathi_mart
             Customers customers = new Customers();
             customers.updateCustomer(mid, name, address, phone, email, memberType);
             FillGridView();
+            btnAdd.Visible = true;
+            btnDelete.Visible = false;
+            btnUpdate.Visible = false;
 
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            var mid = lblId.Text;
+            Customers customers = new Customers();
+            customers.deleteCustomer(mid);
+            clearFields();
+
+            FillGridView();
+            btnAdd.Visible = true;
+            btnDelete.Visible = false;
+            btnUpdate.Visible = false;
         }
     }
 }
