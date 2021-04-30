@@ -1,0 +1,320 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="Sathi_mart.master" %>
+
+
+<html lang="en">
+
+<head runat="server">
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sathi Mart</title>
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <!--Replace with your tailwind.css once created-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <style>
+        .bg-black-alt {
+            background: #191919;
+        }
+
+        .text-black-alt {
+            color: #191919;
+        }
+
+        .border-black-alt {
+            border-color: #191919;
+        }
+
+        [x-cloak] {
+            display: none;
+        }
+
+        @media print {
+            .no-printme {
+                display: none;
+            }
+
+            .printme {
+                display: block;
+            }
+
+            body {
+                line-height: 1.2;
+            }
+        }
+
+        @page {
+            size: A4 portrait;
+            counter-increment: page;
+        }
+        /* Datepicker */
+
+        .date-input {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            z-index: 2000;
+            margin: 3px 0 0 0;
+            border-top: 1px solid #eee;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+            .date-input.is-hidden {
+                display: none;
+            }
+
+            .date-input .pika-title {
+                padding: 0.5rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .date-input .pika-prev,
+            .date-input .pika-next {
+                margin-top: 0;
+                /* margin-top: 0.5rem; */
+                padding: 0.2rem 0;
+                cursor: pointer;
+                color: #4299e1;
+                text-transform: uppercase;
+                font-size: 0.85rem;
+            }
+
+                .date-input .pika-prev:hover,
+                .date-input .pika-next:hover {
+                    text-decoration: underline;
+                }
+
+            .date-input .pika-prev {
+                float: left;
+            }
+
+            .date-input .pika-next {
+                float: right;
+            }
+
+            .date-input .pika-label {
+                display: inline-block;
+                font-size: 0;
+            }
+
+            .date-input .pika-select-month,
+            .date-input .pika-select-year {
+                display: inline-block;
+                border: 1px solid #ddd;
+                color: #444;
+                background-color: #fff;
+                border-radius: 10px;
+                font-size: 0.9rem;
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+                padding-top: 0.25em;
+                padding-bottom: 0.25em;
+                appearance: none;
+            }
+
+                .date-input .pika-select-month:focus,
+                .date-input .pika-select-year:focus {
+                    border-color: #cbd5e0;
+                    outline: none;
+                }
+
+            .date-input .pika-select-month {
+                margin-right: 0.25em;
+            }
+
+            .date-input table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 0.2rem;
+            }
+
+                .date-input table th {
+                    width: 2em;
+                    height: 2em;
+                    font-weight: normal;
+                    color: #718096;
+                    text-align: center;
+                }
+
+                    .date-input table th abbr {
+                        text-decoration: none;
+                    }
+
+                .date-input table td {
+                    padding: 2px;
+                }
+
+                    .date-input table td button {
+                        /* border: 1px solid #e2e8f0; */
+                        width: 1.8em;
+                        height: 1.8em;
+                        text-align: center;
+                        color: #555;
+                        border-radius: 10px;
+                    }
+
+                        .date-input table td button:hover {
+                            background-color: #bee3f8;
+                        }
+
+                    .date-input table td.is-today button {
+                        background-color: #ebf8ff;
+                    }
+
+                    .date-input table td.is-selected button {
+                        background-color: #3182ce;
+                    }
+
+                    .date-input table td.is-selected button {
+                        color: black;
+                    }
+
+                        .date-input table td.is-selected button:hover {
+                            color: black;
+                        }
+
+        .bg-black-alt {
+            background: #191919;
+        }
+
+        .text-black-alt {
+            color: #191919;
+        }
+
+        .border-black-alt {
+            border-color: #191919;
+        }
+
+        .bg-black-alt {
+            background: white;
+        }
+
+        .text-black-alt {
+            color: #191919;
+        }
+
+        .border-black-alt {
+            border-color: #191919;
+        }
+    </style>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="bg-black-alt font-sans leading-normal tracking-normal">
+
+    <form id="form1" runat="server">
+        <nav id="header" class="bg-gray-900 fixed w-full z-10 top-0 shadow">
+
+
+            <div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
+
+                <div class="w-1/2 pl-2 md:pl-0">
+                    <a class="text-gray-100 text-base xl:text-xl no-underline hover:no-underline font-bold" href="#">
+                        <img src="https://saathimart.com/assets/images/1610459846logo-2.png" height="10" width="200" alt="">
+                    </a>
+                </div>
+                <asp:Panel ID="pnlNavigationBar" runat="server">
+                    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-900 z-20" id="nav-content">
+                        <ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
+                            <li class="mr-6 my-2 md:my-0">
+                                <a href="Dashboard.aspx" class="block py-1 md:py-3 pl-1 align-middle text-blue-400 no-underline hover:text-gray-100 border-b-2 border-blue-400 hover:border-blue-400">
+                                    <i class="fas fa-home fa-fw mr-3 text-blue-400"></i><span class="pb-1 md:pb-0 text-sm">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="mr-6 my-2 md:my-0">
+                                <a href="AddItem.aspx" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
+                                    <i class="fas fa-solar-panel fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Items</span>
+                                </a>
+                            </li>
+                            <li class="mr-6 my-2 md:my-0">
+                                <a href="Add_customer.aspx" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-purple-400">
+                                    <i class="fa fa-user fa-fw mr-3 fa-lg"></i><span class="pb-1 md:pb-0 text-sm">Customer</span>
+                                </a>
+                            </li>
+
+                            <li class="mr-6 my-2 md:my-0">
+                                <a href="MakeSale.aspx" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-red-400">
+                                    <i class="fa fa-shopping-cart fa-lg fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Sell Item</span>
+                                </a>
+                            </li>
+                            <li class="mr-6 my-2 md:my-0">
+                                <a href="MakeSale.aspx" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-red-400">
+                                    <i class="fas fa-shopping-bag fa-lg fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Purchase Detail</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </asp:Panel>
+
+                <asp:Panel ID="pnlLoginButtons" runat="server">
+                    <div class="w-1/2 pr-0">
+                        <div class="flex relative" style ="position:absolute;top:78px;left:1300px;" >
+                            <a style="color: white; text-decoration: none;" href="ChangePassword.aspx">
+                                <asp:Label ID="lblUsername" runat="server" Text=""></asp:Label>
+                            </a>
+                            &nbsp;
+                            <asp:Button CssClass="fa fa-facebook" ID="btnLogout" runat="server" Text="" OnClick="btnLogout_Click" BackColor="#111827" ForeColor="White" />
+                        </div>
+                    </div>
+            </div>
+            </asp:Panel>
+
+            </div>
+        </nav>
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <asp:Panel ID="pnlFooter" runat="server">
+            <footer class="bg-gray-900 border-t border-gray-400 shadow">
+                <div class="container max-w-md mx-auto flex py-8">
+
+                    <div class="w-full mx-auto flex flex-wrap">
+                        <div class="flex w-full md:w-1/2 ">
+                            <div class="px-8">
+                                <h3 class="font-bold font-bold text-gray-100">About</h3>
+                                <p class="py-4 text-gray-600 text-sm text-white">
+                                    A mart is a place or trading center where things are bought and sold. A mart is a place or trading center where things are bought and sold.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex w-full md:w-1/2">
+                            <div class="px-8">
+                                <h3 class="font-bold font-bold text-gray-100">&nbsp;&nbsp;&nbsp;&nbsp;Visit us at</h3>
+                                <ul class="list-reset items-center text-sm pt-3">
+                                    <a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline py-1" href="#"><span class="fa fa-facebook fa-2x text-white"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline py-1" href="#"><span class="fa fa-instagram fa-2x text-white"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    
+                                    
+                                        <a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline py-1" href="#"><span class="fa fa-twitter fa-2x text-white"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </footer>
+        </asp:Panel>
+
+    </form>
+</body>
+</html>
